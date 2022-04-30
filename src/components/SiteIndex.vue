@@ -4,9 +4,25 @@
     <el-container>
       <!-- <NavigationBar /> -->
       <el-main class="banner">
-        <!-- <div><h1>木青笔记</h1></div> -->
-
-        <el-avatar class="img" :size="size" :src="circleUrl" :fit="fit" />
+        <div>
+          <p class="titlefont">木青笔记</p>
+          <p class="sloganfont">即使如此，我依然会选择这滚烫的生活!</p>
+          <transition
+            appear
+            name="animate__animated animate__bounce"
+            enter-active-class="animate__rotateIn"
+            leave-active-class="animate__rotateOut"
+          >
+            <el-avatar
+              v-show="isShow"
+              @click.native="test()"
+              class="img"
+              :size="size"
+              :src="circleUrl"
+              :fit="fit"
+            />
+          </transition>
+        </div>
       </el-main>
       <!-- <el-footer>Footer</el-footer> -->
     </el-container>
@@ -14,6 +30,7 @@
 </template>
 
 <script>
+import "animate.css";
 // import NavigationBar from "./NavigationBar";
 export default {
   name: "SiteIndex",
@@ -23,21 +40,29 @@ export default {
         "https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/avatar.png",
       size: 200,
       fit: "fill",
+      isShow: true,
     };
   },
   components: {
     // NavigationBar,
   },
+  methods: {
+    test() {
+      this.isShow = false;
+      setTimeout(() => {
+        this.isShow = true;
+      }, 500);
+    },
+  },
 };
 </script>
 
 <style scoped>
-.indexBanner {
-  height: auto;
-  background-color: blue;
-}
 .img {
   margin: 0 auto;
+  height: 200px;
+  width: 100%;
+
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 .banner {
@@ -53,12 +78,27 @@ export default {
   background-attachment: fixed;
   /* 让背景图基于容器大小伸缩 */
   background-size: cover;
-}
-.wrap {
-  line-height: 200px; /*垂直居中关键*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  height: 200px;
+  background-color: rgb(35, 118, 183);
+}
+p {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+.titlefont {
+  font-family: "STKaiti";
+  font-size: 70px;
+  -webkit-text-stroke: 1px rgb(43, 51, 62);
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.sloganfont {
+  font-family: "Party LET";
   font-size: 36px;
-  background-color: #ccc;
+  font-weight: bold;
+  -webkit-text-stroke: 1px rgb(86, 152, 195);
 }
 </style>
