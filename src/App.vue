@@ -1,16 +1,17 @@
 <template>
-
-    <h1>uqingu</h1>
-
+  <div>
+    <ArticleContext/>
+  </div>
 </template>
 
 <script>
-
+import ArticleContext from "./components/ArticleContext";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-  }
-}
+    ArticleContext,
+  },
+};
 </script>
 
 <style>
