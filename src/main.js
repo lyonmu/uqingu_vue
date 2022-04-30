@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { Button, DatePicker, Avatar, Row, Col, Container, Header, Main, Footer } from 'element-ui';
+import {
+  Button, DatePicker, Avatar,
+  Row, Col, Container, Header,
+  Main, Footer, Backtop, Menu,
+  Submenu, MenuItem,
+} from 'element-ui';
 
 //关闭Vue的生产提示
 Vue.config.productionTip = false
@@ -15,6 +20,10 @@ Vue.component(Container.name, Container);
 Vue.component(Header.name, Header);
 Vue.component(Main.name, Main);
 Vue.component(Footer.name, Footer);
+Vue.component(Backtop.name, Backtop);
+Vue.component(Menu.name, Menu);
+Vue.component(Submenu.name, Submenu);
+Vue.component(MenuItem.name, MenuItem);
 
 Vue.config.productionTip = false
 

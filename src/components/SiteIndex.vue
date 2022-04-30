@@ -1,12 +1,36 @@
 // 网站首页组件
 <template>
   <div>
+    <el-backtop :bottom="60" :visibility-height="200">
+      <div
+        style="
+           {
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            line-height: 40px;
+            color: #1989fa;
+          }
+        "
+      >
+        <rocket-one
+          theme="multi-color"
+          size="30"
+          :fill="['#d41013', '#fffa2f', '#FFF', '#f8a843']"
+          strokeLinecap="square"
+        />
+      </div>
+    </el-backtop>
+
     <el-container>
-      <!-- <NavigationBar /> -->
+      <NavigationBar />
       <el-main class="banner">
         <div>
-          <p class="titlefont">木青笔记</p>
-          <p class="sloganfont">即使如此，我依然会选择这滚烫的生活!</p>
+          <!-- <p class="titlefont">木青笔记</p> -->
+          <p class="titlefont">{{this.value.title}}</p>
+          <!-- <p class="sloganfont">即使如此，我依然会选择这滚烫的生活!</p> -->
+          <p class="sloganfont">{{this.value.slogan}}</p>
           <transition
             appear
             name="animate__animated animate__bounce"
@@ -24,14 +48,19 @@
           </transition>
         </div>
       </el-main>
-      <!-- <el-footer>Footer</el-footer> -->
+      <el-footer>
+        <OverFooter />
+      </el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
 import "animate.css";
-// import NavigationBar from "./NavigationBar";
+import axios from "axios";
+import NavigationBar from "./NavigationBar";
+import OverFooter from "./OverFooter";
+import { RocketOne } from "@icon-park/vue";
 export default {
   name: "SiteIndex",
   data() {
@@ -41,10 +70,13 @@ export default {
       size: 200,
       fit: "fill",
       isShow: true,
+      value: {},
     };
   },
   components: {
-    // NavigationBar,
+    NavigationBar,
+    OverFooter,
+    RocketOne,
   },
   methods: {
     test() {
@@ -53,6 +85,18 @@ export default {
         this.isShow = true;
       }, 500);
     },
+    async getOne() {
+      try {
+        const response = await axios.get("http://192.168.0.103:8001/site/get");
+        console.log(response.data.data)
+        this.value = response.data.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+  mounted() {
+    this.getOne()
   },
 };
 </script>
@@ -62,7 +106,6 @@ export default {
   margin: 0 auto;
   height: 200px;
   width: 100%;
-
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 .banner {
