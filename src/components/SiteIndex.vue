@@ -28,9 +28,9 @@
       <el-main class="banner">
         <div>
           <!-- <p class="titlefont">木青笔记</p> -->
-          <p class="titlefont">{{this.value.title}}</p>
+          <p class="titlefont">{{ value.title }}</p>
           <!-- <p class="sloganfont">即使如此，我依然会选择这滚烫的生活!</p> -->
-          <p class="sloganfont">{{this.value.slogan}}</p>
+          <p class="sloganfont">{{ value.slogan }}</p>
           <transition
             appear
             name="animate__animated animate__bounce"
@@ -42,7 +42,7 @@
               @click.native="test()"
               class="img"
               :size="size"
-              :src="circleUrl"
+              :src="imgurl"
               :fit="fit"
             />
           </transition>
@@ -65,8 +65,6 @@ export default {
   name: "SiteIndex",
   data() {
     return {
-      circleUrl:
-        "https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/avatar.png",
       size: 200,
       fit: "fill",
       isShow: true,
@@ -88,7 +86,7 @@ export default {
     async getOne() {
       try {
         const response = await axios.get("http://192.168.0.103:8001/site/get");
-        console.log(response.data.data)
+        console.log(response.data.data);
         this.value = response.data.data;
       } catch (error) {
         console.error(error);
@@ -96,7 +94,13 @@ export default {
     },
   },
   mounted() {
-    this.getOne()
+    this.getOne();
+    //
+  },
+  computed: {
+    imgurl() {
+      return this.value.logo;
+    },
   },
 };
 </script>
