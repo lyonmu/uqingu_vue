@@ -2,7 +2,7 @@
 import Vue from 'vue'
 //引入Vuex
 import Vuex from 'vuex'
-import { getSiteInfo } from "../datafun/index";
+import { getSiteInfo } from "../datafun";
 // 引入获取数据的函数模块
 //应用Vuex插件
 Vue.use(Vuex)
