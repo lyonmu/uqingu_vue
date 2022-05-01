@@ -6,6 +6,8 @@ import {
   Main, Footer, Backtop, Menu,
   Submenu, MenuItem,
 } from 'element-ui';
+//引入store
+import store from './store'
 
 //关闭Vue的生产提示
 Vue.config.productionTip = false
@@ -28,5 +30,6 @@ Vue.component(MenuItem.name, MenuItem);
 Vue.config.productionTip = false
 
 new Vue({
+  store,
   render: h => h(App),
 }).$mount('#app')
