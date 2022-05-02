@@ -42,13 +42,13 @@ export default {
         this.isShow = true;
       }, 500);
     },
-    ...mapActions(["getSiteInfoActions"]),
+    ...mapActions("siteOptions", ["getSiteInfoActions"]),
   },
   mounted() {
     this.getSiteInfoActions();
   },
   computed: {
-    ...mapState(["SiteInfo"]),
+    ...mapState("siteOptions", ["SiteInfo"]),
   },
 };
 </script>

@@ -7,7 +7,6 @@
       background-color="#bbcdc5"
       text-color="#fff"
       active-text-color="#faff72"
-      @select="handleSelect"
       :router="true"
       :default-active="activeIndex"
     >
@@ -20,7 +19,7 @@
       <el-menu-item index="essay" class="elmenuitem">
           About Me
       </el-menu-item>
-      <el-menu-item index="4" class="elmenuitem">全部文章</el-menu-item>
+      <el-menu-item index="4" class="elmenuitem">我的文章</el-menu-item>
       <el-menu-item index="5" class="elmenuitem">时间轴</el-menu-item>
     </el-menu>
   </div>
@@ -38,9 +37,6 @@ export default {
     };
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
   },
 };
 </script>

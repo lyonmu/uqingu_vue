@@ -38,13 +38,6 @@ export default {
     },
   },
   mounted() {
-    var css = `
-            background-image: linear-gradient(to right, orange, purple);
-            -webkit-background-clip: text;
-            color: white;
-            font-size: 15px;
-            border-radius:5px;`;
-    console.log("%cuqingu 0.0.1-rc", css);
     this.getOne();
   },
 };

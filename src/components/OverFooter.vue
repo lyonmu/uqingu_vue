@@ -1,7 +1,9 @@
 <template>
   <div class="footerstyle">
     <p>
-      <a href="http://beian.miit.gov.cn/" target="_blank">豫ICP备2021021610号-1</a>
+      <a href="http://beian.miit.gov.cn/" target="_blank"
+        >豫ICP备2021021610号-1</a
+      >
     </p>
     <p>{{ runtime }}</p>
     <p>Copyright © 2022 muqingcloud.space</p>
@@ -17,8 +19,8 @@ export default {
   },
   methods: {},
   computed: {
-    ...mapState(["SiteInfo"]),
-    ...mapGetters(["runtime"]),
+    ...mapState("siteOptions", ["SiteInfo"]),
+    ...mapGetters("siteOptions", ["runtime"]),
   },
   mounted() {},
 };
