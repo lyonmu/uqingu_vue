@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 //引入组件
 import SiteIndex from "../pages/SiteIndex";
 import ArticleContext from "../pages/ArticleContext";
+import ArticleIndex from "../pages/ArticleIndex";
+
 
 //创建并暴露一个路由器
 export default new VueRouter({
@@ -16,6 +18,11 @@ export default new VueRouter({
             path: '/essay',
             name:"essay",
             component: ArticleContext
+        },
+        {
+            path: '/essayindex',
+            name: "essayindex",
+            component: ArticleIndex
         }
     ]
 })

@@ -29,7 +29,7 @@ export default {
     async getOne() {
       try {
         const response = await axios.get(
-          "http://192.168.0.103:8001/essay/get/1"
+          "http://192.168.0.103:8001/essay/get/2"
         );
         this.value = response.data.data.body;
       } catch (error) {

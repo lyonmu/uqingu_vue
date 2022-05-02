@@ -13,13 +13,11 @@
       <el-menu-item index="/" class="elmenuitem">
         <el-avatar :size="size" :src="url" :fit="fit" />
       </el-menu-item>
-      <el-menu-item index="/" class="elmenuitem">
-          Index
+      <el-menu-item index="/" class="elmenuitem"> Index </el-menu-item>
+      <el-menu-item index="essay" class="elmenuitem"> About Me </el-menu-item>
+      <el-menu-item index="essayindex" class="elmenuitem">
+        我的文章
       </el-menu-item>
-      <el-menu-item index="essay" class="elmenuitem">
-          About Me
-      </el-menu-item>
-      <el-menu-item index="4" class="elmenuitem">我的文章</el-menu-item>
       <el-menu-item index="5" class="elmenuitem">时间轴</el-menu-item>
     </el-menu>
   </div>
@@ -33,17 +31,15 @@ export default {
       url: "https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/avatar.png",
       fit: "fill",
       size: 30,
-      activeIndex: 'index',
+      activeIndex: "index",
     };
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
 
 <style scoped>
 .header {
-  /* background-color: rgb(191, 228, 59); */
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border: 0ch;
@@ -56,7 +52,7 @@ export default {
   height: 40px;
 }
 .elmenuitem {
-  text-decoration:none;
+  text-decoration: none;
   height: 40px;
   line-height: 40px;
 }

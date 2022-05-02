@@ -4,7 +4,7 @@ import {
   Button, DatePicker, Avatar,
   Row, Col, Container, Header,
   Main, Footer, Backtop, Menu,
-  Submenu, MenuItem,
+  Submenu, MenuItem, Descriptions, DescriptionsItem, Tag
 } from 'element-ui';
 //引入store
 import store from './store'
@@ -35,6 +35,9 @@ Vue.component(Backtop.name, Backtop);
 Vue.component(Menu.name, Menu);
 Vue.component(Submenu.name, Submenu);
 Vue.component(MenuItem.name, MenuItem);
+Vue.component(Descriptions.name, Descriptions);
+Vue.component(DescriptionsItem.name, DescriptionsItem);
+Vue.component(Tag.name, Tag);
 
 Vue.config.productionTip = false
 
