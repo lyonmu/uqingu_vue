@@ -23,14 +23,35 @@
     </el-backtop>
     <el-container :direction="direction">
       <el-header class="clear" :height="height"><NavigationBar /></el-header>
-      <el-main class="clear"><SiteIndex /></el-main>
+      <el-main class="clear">
+        <!-- 指定组件的呈现位置 -->
+        <router-view></router-view>
+      </el-main>
       <el-footer class="clear" :height="height"><OverFooter /></el-footer>
     </el-container>
+    <div
+      id="cc-myssl-id"
+      style="
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 65px;
+        height: 65px;
+        z-index: 99;
+      "
+    >
+      <a href="https://myssl.com/muqingcloud.space?from=mysslid"
+        ><img
+          src="https://static.myssl.com/res/images/myssl-id.png"
+          alt=""
+          style="width: 100%; height: 100%"
+      /></a>
+    </div>
   </div>
 </template>
 
 <script>
-import SiteIndex from "./components/SiteIndex";
+// import SiteIndex from "./pages/SiteIndex";
 import { RocketOne } from "@icon-park/vue";
 import NavigationBar from "./components/NavigationBar";
 import OverFooter from "./components/OverFooter";
@@ -39,7 +60,7 @@ export default {
   name: "App",
   components: {
     NavigationBar,
-    SiteIndex,
+    // SiteIndex,
     RocketOne,
     OverFooter,
   },
@@ -57,5 +78,8 @@ export default {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border: 0ch;
+}
+.container{
+  /* min-height: 100vh; */
 }
 </style>

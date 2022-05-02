@@ -8,13 +8,23 @@
       text-color="#fff"
       active-text-color="#faff72"
       @select="handleSelect"
+      :router="true"
     >
-      <el-menu-item index="1" class="elmenuitem">
+      <el-menu-item index="1" class="elmenuitem" disabled>
         <el-avatar class="img" :size="size" :src="url" :fit="fit" />
       </el-menu-item>
-      <el-menu-item index="2" class="elmenuitem">About Me</el-menu-item>
-      <el-menu-item index="3" class="elmenuitem">全部文章</el-menu-item>
-      <el-menu-item index="4" class="elmenuitem">时间轴</el-menu-item>
+      <el-menu-item index="index" class="elmenuitem">
+        <!-- <router-link class="elmenuitem" to="/index"> -->
+          Index
+        <!-- </router-link> -->
+      </el-menu-item>
+      <el-menu-item index="essay" class="elmenuitem">
+        <!-- <router-link class="elmenuitem" active-class="active" to="/essay"> -->
+          About Me
+        <!-- </router-link> -->
+      </el-menu-item>
+      <el-menu-item index="4" class="elmenuitem">全部文章</el-menu-item>
+      <el-menu-item index="5" class="elmenuitem">时间轴</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -52,6 +62,7 @@ export default {
   height: 40px;
 }
 .elmenuitem {
+  text-decoration:none;
   height: 40px;
   line-height: 40px;
 }

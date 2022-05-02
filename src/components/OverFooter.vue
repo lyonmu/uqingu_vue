@@ -1,12 +1,12 @@
 <template>
   <div class="footerstyle">
-    <p>Copyright © 2022 muqingcloud.space</p>
-    <p>{{ runtime }}</p>
     <p>
       <a href="http://beian.miit.gov.cn/" target="_blank">{{
         SiteInfo.ministry
       }}</a>
     </p>
+    <p>{{ runtime }}</p>
+    <p>Copyright © 2022 muqingcloud.space</p>
   </div>
 </template>
 

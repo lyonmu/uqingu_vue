@@ -8,6 +8,15 @@ import {
 } from 'element-ui';
 //引入store
 import store from './store'
+//引入VueRouter
+import VueRouter from 'vue-router'
+//引入路由器
+import router from './router'
+
+//关闭Vue的生产提示
+Vue.config.productionTip = false
+//应用插件
+Vue.use(VueRouter)
 
 //关闭Vue的生产提示
 Vue.config.productionTip = false
@@ -31,5 +40,6 @@ Vue.config.productionTip = false
 
 new Vue({
   store,
+  router: router,
   render: h => h(App),
 }).$mount('#app')
