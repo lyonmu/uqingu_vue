@@ -22,9 +22,9 @@
       </div>
     </el-backtop>
     <el-container :direction="direction">
-      <NavigationBar />
-      <SiteIndex />
-      <OverFooter />
+      <el-header class="clear" :height="height"><NavigationBar /></el-header>
+      <el-main class="clear"><SiteIndex /></el-main>
+      <el-footer class="clear" :height="height"><OverFooter /></el-footer>
     </el-container>
   </div>
 </template>
@@ -43,13 +43,19 @@ export default {
     RocketOne,
     OverFooter,
   },
-  data(){
-    return{
-      direction:"vertical"
-    }
-  }
+  data() {
+    return {
+      direction: "vertical",
+      height: "40px",
+    };
+  },
 };
 </script>
 
-<style>
+<style scoped>
+.clear {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  border: 0ch;
+}
 </style>

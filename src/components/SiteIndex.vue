@@ -1,26 +1,24 @@
 <template>
   <div>
-    <el-main class="banner">
-      <div>
-        <p class="titlefont">{{ SiteInfo.title }}</p>
-        <p class="sloganfont">{{ SiteInfo.slogan }}</p>
-        <transition
-          appear
-          name="animate__animated animate__bounce"
-          enter-active-class="animate__rotateIn"
-          leave-active-class="animate__rotateOut"
-        >
-          <el-avatar
-            v-show="isShow"
-            @click.native="test()"
-            class="img"
-            :size="size"
-            :src="SiteInfo.logo"
-            :fit="fit"
-          />
-        </transition>
-      </div>
-    </el-main>
+    <div class="banner">
+      <p class="titlefont">{{ SiteInfo.title }}</p>
+      <p class="sloganfont">{{ SiteInfo.slogan }}</p>
+      <transition
+        appear
+        name="animate__animated animate__bounce"
+        enter-active-class="animate__rotateIn"
+        leave-active-class="animate__rotateOut"
+      >
+        <el-avatar
+          v-show="isShow"
+          @click.native="test()"
+          class="img"
+          :size="size"
+          :src="SiteInfo.logo"
+          :fit="fit"
+        />
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -36,8 +34,7 @@ export default {
       isShow: true,
     };
   },
-  components: {
-  },
+  components: {},
   methods: {
     test() {
       this.isShow = false;
@@ -56,7 +53,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .img {
   margin: 0 auto;
   height: 200px;
@@ -64,21 +61,22 @@ export default {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 .banner {
-  overflow: auto;
-  height: 80vh;
-  display: -webkit-flex;
+  height: 87vh;
   background-image: url(https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/pexels-daniel-torobekov-11258462.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  display: -webkit-flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: rgb(35, 118, 183);
+  border: 0px;
 }
 .titlefont {
+  margin-top: 100px ;
   font-family: "STKaiti";
   font-size: 70px;
   -webkit-text-stroke: 1px rgb(43, 51, 62);
