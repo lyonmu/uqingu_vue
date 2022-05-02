@@ -25,7 +25,7 @@
       <el-header class="clear" :height="height"><NavigationBar /></el-header>
       <el-main class="clear">
         <!-- 指定组件的呈现位置 -->
-        <router-view></router-view>
+        <router-view />
       </el-main>
       <el-footer class="clear" :height="height"><OverFooter /></el-footer>
     </el-container>
@@ -51,7 +51,6 @@
 </template>
 
 <script>
-// import SiteIndex from "./pages/SiteIndex";
 import { RocketOne } from "@icon-park/vue";
 import NavigationBar from "./components/NavigationBar";
 import OverFooter from "./components/OverFooter";
@@ -60,7 +59,6 @@ export default {
   name: "App",
   components: {
     NavigationBar,
-    // SiteIndex,
     RocketOne,
     OverFooter,
   },
@@ -79,7 +77,7 @@ export default {
   padding: 0px 0px 0px 0px;
   border: 0ch;
 }
-.container{
-  /* min-height: 100vh; */
+.container {
+  min-height: 100vh;
 }
 </style>

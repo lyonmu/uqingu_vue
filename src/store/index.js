@@ -31,13 +31,13 @@ const state = {
 //准备getters——用于将state中的数据进行加工
 const getters = {
     runtime(state) {
-        let end = Date.parse(new Date());
-        let fend = dayjs(end).format("YYYY年MM月DD日 HH:mm:ss")
+        // let end = Date.parse(new Date());
+        // let fend = dayjs(end).format("YYYY年MM月DD日 HH:mm:ss")
 
-        console.log(fend)
+        // console.log(fend)
         const x = state.SiteInfo.createtime
         let fx = dayjs(x).format("YYYY年MM月DD日 HH:mm:ss")
-        console.log(fx)
+        // console.log(fx)
         return fx
     }
 }

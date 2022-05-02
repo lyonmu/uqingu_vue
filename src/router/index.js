@@ -6,13 +6,15 @@ import ArticleContext from "../pages/ArticleContext";
 
 //创建并暴露一个路由器
 export default new VueRouter({
+    mode: 'history',
     routes: [
         {
-            path: '/index',
+            path: '/',
             component: SiteIndex
         },
         {
             path: '/essay',
+            name:"essay",
             component: ArticleContext
         }
     ]

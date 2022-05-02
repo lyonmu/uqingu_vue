@@ -1,9 +1,7 @@
 <template>
   <div class="footerstyle">
     <p>
-      <a href="http://beian.miit.gov.cn/" target="_blank">{{
-        SiteInfo.ministry
-      }}</a>
+      <a href="http://beian.miit.gov.cn/" target="_blank">豫ICP备2021021610号-1</a>
     </p>
     <p>{{ runtime }}</p>
     <p>Copyright © 2022 muqingcloud.space</p>
@@ -29,7 +27,7 @@ export default {
 <style scoped>
 .footerstyle {
   text-align: center;
-  background-color: #c2ccd0;
+  background-color: #bbcdc5;
   border: 0ch;
   padding-top: 0%;
   width: 100%;
@@ -38,7 +36,7 @@ p {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   color: #003472;
-  font-size: 10px;
+  font-size: 5px;
 }
 a {
   color: var(--base-color);

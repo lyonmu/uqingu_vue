@@ -59,9 +59,9 @@ export default {
   height: 200px;
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  margin-block-end: 130px;
 }
 .banner {
-  height: 87vh;
   background-image: url(https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/pexels-daniel-torobekov-11258462.jpg);
   background-position: center center;
   background-repeat: no-repeat;

@@ -1,27 +1,29 @@
 <template>
-  <div class="test">
-    <!-- <div class="markdown-body"> -->
-    <div class="c-html-render">
-      <VueMarkdown :source="value"></VueMarkdown>
+  <div>
+    <div class="test">
+      <!-- <div class="markdown-body"> -->
+      <div class="c-html-render">
+        <Markdown
+          :isPreview="true"
+          :theme="theme[1]"
+          :initialValue="value"
+          :value="value"
+        ></Markdown>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import "github-markdown-css/github-markdown.css";
 import axios from "axios";
-import VueMarkdown from "vue-markdown";
-/* On-demand import */
-import "@corgicoding/theme/dist/normalize.css";
-import "@corgicoding/theme/dist/github.css";
-import "@corgicoding/theme";
+import Markdown from "vue-meditor";
 export default {
   name: "ArticleContext",
   data() {
-    return { value: `` };
+    return { value: ``, theme: ["light", "dark", "oneDark", "gitHub"] };
   },
   components: {
-    VueMarkdown,
+    Markdown,
   },
   methods: {
     async getOne() {
@@ -36,7 +38,13 @@ export default {
     },
   },
   mounted() {
-    console.log("页面挂载完毕!!!");
+    var css = `
+            background-image: linear-gradient(to right, orange, purple);
+            -webkit-background-clip: text;
+            color: white;
+            font-size: 15px;
+            border-radius:5px;`;
+    console.log("%cuqingu 0.0.1-rc", css);
     this.getOne();
   },
 };
@@ -45,8 +53,6 @@ export default {
 <style scoped>
 .test {
   width: 900px;
-  position: absolute;
-  top: 300px;
   bottom: 0;
   left: 0;
   right: 0;
