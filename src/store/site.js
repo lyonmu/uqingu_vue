@@ -1,11 +1,11 @@
-import { getSiteInfo } from "../datafun";
+import { SiteServer } from "../datafun";
 import dayjs from 'dayjs';
 //网站信息相关
 export default {
     namespaced: true,
     actions: {
         getSiteInfoActions(context) {
-            getSiteInfo().then((response) => {
+            SiteServer.getSiteInfo().then((response) => {
                 context.commit('getSiteInfoMutations', response);
             });
         }
