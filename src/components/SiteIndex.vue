@@ -1,39 +1,31 @@
 <template>
   <div>
-    <el-container>
-      <NavigationBar />
-      <el-main class="banner">
-        <div>
-          <p class="titlefont">{{ SiteInfo.title }}</p>
-          <p class="sloganfont">{{ SiteInfo.slogan }}</p>
-          <transition
-            appear
-            name="animate__animated animate__bounce"
-            enter-active-class="animate__rotateIn"
-            leave-active-class="animate__rotateOut"
-          >
-            <el-avatar
-              v-show="isShow"
-              @click.native="test()"
-              class="img"
-              :size="size"
-              :src="SiteInfo.logo"
-              :fit="fit"
-            />
-          </transition>
-        </div>
-      </el-main>
-      <el-footer>
-        <OverFooter />
-      </el-footer>
-    </el-container>
+    <el-main class="banner">
+      <div>
+        <p class="titlefont">{{ SiteInfo.title }}</p>
+        <p class="sloganfont">{{ SiteInfo.slogan }}</p>
+        <transition
+          appear
+          name="animate__animated animate__bounce"
+          enter-active-class="animate__rotateIn"
+          leave-active-class="animate__rotateOut"
+        >
+          <el-avatar
+            v-show="isShow"
+            @click.native="test()"
+            class="img"
+            :size="size"
+            :src="SiteInfo.logo"
+            :fit="fit"
+          />
+        </transition>
+      </div>
+    </el-main>
   </div>
 </template>
 
 <script>
 import "animate.css";
-import NavigationBar from "./NavigationBar";
-import OverFooter from "./OverFooter";
 import { mapActions, mapState } from "vuex";
 export default {
   name: "SiteIndex",
@@ -45,8 +37,6 @@ export default {
     };
   },
   components: {
-    NavigationBar,
-    OverFooter,
   },
   methods: {
     test() {
@@ -75,7 +65,7 @@ export default {
 }
 .banner {
   overflow: auto;
-  height: 100vh;
+  height: 80vh;
   display: -webkit-flex;
   background-image: url(https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/pexels-daniel-torobekov-11258462.jpg);
   background-position: center center;

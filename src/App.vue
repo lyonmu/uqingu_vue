@@ -21,26 +21,33 @@
         />
       </div>
     </el-backtop>
-    <!-- <ArticleContext/> -->
-    <!-- <TestElementUI /> -->
-    <SiteIndex />
+    <el-container :direction="direction">
+      <NavigationBar />
+      <SiteIndex />
+      <OverFooter />
+    </el-container>
   </div>
 </template>
 
 <script>
-// import ArticleContext from "./components/ArticleContext";
-// import TestElementUI from "./components/TestElementUI";
 import SiteIndex from "./components/SiteIndex";
 import { RocketOne } from "@icon-park/vue";
+import NavigationBar from "./components/NavigationBar";
+import OverFooter from "./components/OverFooter";
 
 export default {
   name: "App",
   components: {
-    // ArticleContext,
-    // TestElementUI,
+    NavigationBar,
     SiteIndex,
     RocketOne,
+    OverFooter,
   },
+  data(){
+    return{
+      direction:"vertical"
+    }
+  }
 };
 </script>
 

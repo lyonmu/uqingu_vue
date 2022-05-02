@@ -3,17 +3,24 @@
   <div>
     <el-header class="header">
       <el-menu
-        :default-active="activeIndex2"
         mode="horizontal"
         class="elmenu"
-        @select="handleSelect"
-        background-color="#758a99"
+        background-color="#bbcdc5"
         text-color="#fff"
-        active-text-color="#ffd04b"
+        active-text-color="#faff72"
+        @select="handleSelect"
       >
-        <el-menu-item index="1">处理中心</el-menu-item>
-        <el-menu-item index="2">处理中心</el-menu-item>
-        <el-menu-item index="3">处理中心</el-menu-item>
+        <el-menu-item index="1">
+          <el-avatar
+            class="img"
+            :size="size"
+            :src="url"
+            :fit="fit"
+          />
+        </el-menu-item>
+        <el-menu-item index="2">About Me</el-menu-item>
+        <el-menu-item index="3">全部文章</el-menu-item>
+        <el-menu-item index="4">时间轴</el-menu-item>
       </el-menu>
     </el-header>
   </div>
@@ -24,8 +31,9 @@ export default {
   name: "NavigationBar",
   data() {
     return {
-      activeIndex: "1",
-      activeIndex2: "1",
+      url: "https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/avatar.png",
+      fit: "fill",
+      size: 40,
     };
   },
   methods: {
@@ -38,7 +46,7 @@ export default {
 
 <style scoped>
 .header {
-  background-color: rgb(191, 228, 59);
+  /* background-color: rgb(191, 228, 59); */
   padding: 0px 0px;
   margin: 0%;
   border: 0ch;
