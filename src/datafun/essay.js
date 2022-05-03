@@ -14,7 +14,7 @@ export default {
     },
     getEssayInfo: async (id) => {
         try {
-            const data = await axios.get(SERVER_URl + "/essay/get" + id);
+            const data = await axios.get(SERVER_URl + "/essay/get/" + id);
             return data.data.data
         } catch (error) {
             console.error(error);

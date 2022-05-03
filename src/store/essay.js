@@ -8,11 +8,19 @@ export default {
             EssayServer.getEssayList().then((response) => {
                 context.commit('getEssayListMutations', response);
             });
-        }
+        },
+        getEssayActions(context,value) {
+            EssayServer.getEssayInfo(value).then((response) => {
+                context.commit('getEssayMutations', response);
+            });
+        },
     },
     mutations: {
         getEssayListMutations(state, value) {
             state.ArticleList = value;
+        },
+        getEssayMutations(state, value) {
+            state.ArticleInfo = value;
         }
     },
     state: {

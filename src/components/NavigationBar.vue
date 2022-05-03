@@ -14,7 +14,13 @@
         <el-avatar :size="size" :src="url" :fit="fit" />
       </el-menu-item>
       <el-menu-item index="/" class="elmenuitem"> Index </el-menu-item>
-      <el-menu-item index="essay" class="elmenuitem"> About Me </el-menu-item>
+      <el-menu-item
+        index="essay"
+        class="elmenuitem"
+        :route="{ path: `essay`,query: { id: 2 } }"
+      >
+        About Me
+      </el-menu-item>
       <el-menu-item index="essaylist" class="elmenuitem">
         我的文章
       </el-menu-item>

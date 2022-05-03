@@ -5,8 +5,7 @@
         <Markdown
           :isPreview="true"
           :theme="theme[1]"
-          :initialValue="value"
-          :value="value"
+          :value="ArticleInfo.body"
         ></Markdown>
       </div>
     </div>
@@ -14,31 +13,29 @@
 </template>
 
 <script>
-import axios from "axios";
 import Markdown from "vue-meditor";
+import { mapActions, mapState } from "vuex";
 export default {
   name: "ArticleContext",
   data() {
-    return { value: ``, theme: ["light", "dark", "oneDark", "gitHub"] };
+    return {
+      theme: ["light", "dark", "oneDark", "gitHub"],
+      Articleid: 0,
+    };
   },
   components: {
     Markdown,
   },
   methods: {
-    async getOne() {
-      try {
-        const response = await axios.get(
-          "http://192.168.0.103:8001/essay/get/2"
-        );
-        this.value = response.data.data.body;
-      } catch (error) {
-        console.error(error);
-      }
-    },
+    ...mapActions("essayOptions", ["getEssayActions"]),
   },
   mounted() {
-    this.getOne();
+    this.Articleid = this.$route.query.id;
+    this.getEssayActions(this.Articleid);
   },
+  computed:{
+    ...mapState("essayOptions", ["ArticleInfo"]),
+  }
 };
 </script>
 
@@ -57,6 +54,6 @@ export default {
   background-attachment: fixed;
   background-size: cover;
   background-color: rgb(35, 118, 183);
-  min-height: calc(100vh - 95px)
+  min-height: calc(100vh - 95px);
 }
 </style>
