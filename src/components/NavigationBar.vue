@@ -15,9 +15,9 @@
       </el-menu-item>
       <el-menu-item index="/" class="elmenuitem"> Index </el-menu-item>
       <el-menu-item
-        index="essay"
+        index="aboutme"
         class="elmenuitem"
-        :route="{ path: `essay`,query: { id: 2 } }"
+        :route="{ path: `aboutme`,query: { id: 2 } }"
       >
         About Me
       </el-menu-item>

@@ -1,6 +1,5 @@
 <template>
-  <!-- <div class="centertext"> -->
-  <div>
+  <div @click="getArticleInfo(Article.id)">
     <div class="borderStyle">
       <p class="pstyle">{{ Article.title }}</p>
       <el-descriptions :column="1" :direction="direction[0]" :size="size[0]">
@@ -10,16 +9,14 @@
           :contentStyle="{ 'text-align': 'left' }"
           label="文章简介"
         >
-          <!-- {{ Article.introduce }} -->
-          李晓教授的讲话：国家命运与个人命运
+          {{ Article.introduce }}
         </el-descriptions-item>
         <el-descriptions-item
           label="作者"
           label-class-name="my-label"
           content-class-name="my-content"
         >
-          <!-- {{ Article.userid }} -->
-          木青
+          {{ Article.userid }}
         </el-descriptions-item>
         <el-descriptions-item
           label="发布时间"
@@ -33,8 +30,7 @@
           label-class-name="my-label"
           content-class-name="my-content"
         >
-          <!-- <el-tag size="small">{{ Article.classifyid }}</el-tag> -->
-          <el-tag size="medium" effect="dark">编程</el-tag>
+          <el-tag size="small">{{ Article.classifyid }}</el-tag>
         </el-descriptions-item>
       </el-descriptions>
     </div>
@@ -52,7 +48,11 @@ export default {
       size: ["medium ", "small", "mini"],
     };
   },
-  methods: {},
+  methods: {
+    getArticleInfo(id) {
+      this.$router.push({ path: `essay`, query: { id: id } });
+    },
+  },
   mounted() {},
   computed: {},
 
@@ -65,15 +65,6 @@ export default {
 </script>
 
 <style>
-.centertext {
-  margin: 100px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
 .borderStyle {
   width: 280px;
   background-color: #dff0e8;
