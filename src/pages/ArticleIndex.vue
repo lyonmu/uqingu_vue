@@ -16,7 +16,8 @@
           label-class-name="my-label"
           content-class-name="my-content"
         >
-          {{ Article.userid }}
+          <!-- {{ Article.userid }} -->
+          木青
         </el-descriptions-item>
         <el-descriptions-item
           label="发布时间"
@@ -30,7 +31,7 @@
           label-class-name="my-label"
           content-class-name="my-content"
         >
-          <el-tag size="small">{{ Article.classifyid }}</el-tag>
+          <el-tag size="small">{{ ClassifyInfo.name }}</el-tag>
         </el-descriptions-item>
       </el-descriptions>
     </div>
@@ -38,6 +39,7 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 import dayjs from "dayjs";
 export default {
   name: "ArticleIndex",
@@ -52,10 +54,14 @@ export default {
     getArticleInfo(id) {
       this.$router.push({ path: `essay`, query: { id: id } });
     },
+    ...mapActions("classifyOptions", ["getClassifyActions"]),
   },
-  mounted() {},
-  computed: {},
-
+  mounted() {
+    this.getClassifyActions(this.Article.classifyid);
+  },
+  computed: {
+    ...mapState("classifyOptions", ["ClassifyInfo"]),
+  },
   filters: {
     timeFormater(value, str = "YYYY年MM月DD日") {
       return dayjs(value).format(str);

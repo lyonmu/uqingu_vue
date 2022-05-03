@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import siteOptions from './site'
 import essayOptions from './essay'
+import classifyOptions from './classify'
 
 //应用Vuex插件
 Vue.use(Vuex)
@@ -12,6 +13,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     modules: {
         siteOptions,
-        essayOptions
+        essayOptions,
+        classifyOptions
     }
 })
