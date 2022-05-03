@@ -76,15 +76,17 @@ export default {
   border: 0px;
 }
 .titlefont {
-  margin-top: 100px ;
-  font-family: "STKaiti";
+  margin-top: 100px;
+  font-family: "STKaiti", "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 70px;
   -webkit-text-stroke: 1px rgb(43, 51, 62);
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
 .sloganfont {
-  font-family: "Party LET";
+  font-family: "Party LET", "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 36px;
   font-weight: bold;
   -webkit-text-stroke: 1px rgb(86, 152, 195);

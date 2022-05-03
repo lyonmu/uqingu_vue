@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div class="divbackground">
     <div class="test">
-      <!-- <div class="markdown-body"> -->
       <div class="c-html-render">
         <Markdown
           :isPreview="true"
@@ -50,5 +49,14 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
+}
+.divbackground {
+  background-image: url(https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/pexels-daniel-torobekov-11258462.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: rgb(35, 118, 183);
+  min-height: calc(100vh - 95px)
 }
 </style>

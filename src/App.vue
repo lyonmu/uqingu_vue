@@ -23,7 +23,7 @@
     </el-backtop>
     <el-container :direction="direction">
       <el-header class="clear" :height="height"><NavigationBar /></el-header>
-      <el-main class="clear">
+      <el-main class="clear elmain">
         <!-- 指定组件的呈现位置 -->
         <router-view />
       </el-main>
@@ -68,7 +68,7 @@ export default {
       height: "40px",
     };
   },
-  mounted(){
+  mounted() {
     var css = `
             background-image: linear-gradient(to right, orange, purple);
             -webkit-background-clip: text;
@@ -76,7 +76,7 @@ export default {
             font-size: 15px;
             border-radius:5px;`;
     console.log("%cuqingu 0.0.1-rc", css);
-  }
+  },
 };
 </script>
 
@@ -88,5 +88,8 @@ export default {
 }
 .container {
   min-height: 100vh;
+}
+.elmain{
+  min-height: calc(100vh - 95px)
 }
 </style>

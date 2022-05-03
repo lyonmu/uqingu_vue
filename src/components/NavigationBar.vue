@@ -15,10 +15,10 @@
       </el-menu-item>
       <el-menu-item index="/" class="elmenuitem"> Index </el-menu-item>
       <el-menu-item index="essay" class="elmenuitem"> About Me </el-menu-item>
-      <el-menu-item index="essayindex" class="elmenuitem">
+      <el-menu-item index="essaylist" class="elmenuitem">
         我的文章
       </el-menu-item>
-      <el-menu-item index="5" class="elmenuitem">时间轴</el-menu-item>
+      <!-- <el-menu-item index="#" class="elmenuitem">时间轴</el-menu-item> -->
     </el-menu>
   </div>
 </template>
