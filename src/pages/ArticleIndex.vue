@@ -78,7 +78,7 @@ export default {
   border-radius: 10px;
 }
 .pstyle {
-  margin-left: 100px;
+  margin-left: 20px;
   margin-top: 5px;
   font-family: "STKaiti";
   font-size: 20px;
