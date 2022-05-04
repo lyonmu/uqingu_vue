@@ -29,6 +29,10 @@ export default new VueRouter({
             path: '/essaylist',
             name: "essaylist",
             component: ArticleList
+        },
+        {
+            path: '*',
+            redirect: '/'
         }
     ]
 })
