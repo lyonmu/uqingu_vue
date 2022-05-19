@@ -2,11 +2,7 @@
   <div class="divbackground">
     <div class="test">
       <div class="c-html-render">
-        <Markdown
-          :isPreview="true"
-          :theme="theme[1]"
-          :value="ArticleInfo.body"
-        ></Markdown>
+        <Markdown :isPreview="true" :theme="theme[1]" :value="ArticleInfo.body" :height="758"></Markdown>
       </div>
     </div>
   </div>
@@ -33,7 +29,7 @@ export default {
     this.Articleid = this.$route.query.id;
     this.getEssayActions(this.Articleid);
   },
-  computed:{
+  computed: {
     ...mapState("essayOptions", ["ArticleInfo"]),
   }
 };
@@ -41,12 +37,13 @@ export default {
 
 <style scoped>
 .test {
-  width: 900px;
+  width: 1200px;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
 }
+
 .divbackground {
   background-image: url(https://cos.ap-guangzhou.myqcloud.com/myimages-1305160569/images/pexels-daniel-torobekov-11258462.jpg);
   background-position: center center;

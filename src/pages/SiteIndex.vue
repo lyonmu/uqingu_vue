@@ -74,6 +74,7 @@ export default {
   text-align: center;
   background-color: rgb(35, 118, 183);
   border: 0px;
+  min-height: calc(100vh - 95px)
 }
 .titlefont {
   margin-top: 100px;
